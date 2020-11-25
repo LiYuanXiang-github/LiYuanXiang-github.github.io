@@ -31,4 +31,4 @@ github:LiYuanXiang-github.github.io
 
 - 邮箱：1849655755@qq.com
 
-### 谢谢您得访问
+### 谢谢您的访问
