@@ -20,7 +20,7 @@ github:LiYuanXiang-github.github.io
 
 GitHub System用例图说明：
 
-作者：李元祥，李杰
+作者：李元祥
 
 用例图建模过程分析：
 
@@ -97,7 +97,7 @@ Files Manage用例图说明：
 
 Search and Review Files用例图说明：
 
-作者：李元祥，葛洲宇
+作者：李元祥，王庆瑞
 
 用例图建模过程分析：
 
@@ -136,7 +136,7 @@ Search and Review Files用例图说明：
 
 Download Files用例图说明：
 
-作者：李元祥,王庆瑞
+作者：李杰,葛洲宇
 
 用例图建模过程分析：
 
