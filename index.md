@@ -12,7 +12,7 @@
 github:LiYuanXiang-github.github.io
 
 
-###Figure 1 :
+########################Figure 1######################## 
 
 GitHub System用例图说明：
 
@@ -42,7 +42,7 @@ User和Administrator共同指向Search Files, Review Files,Download Files,Manage
 
 
 
-###Figure 2 :
+######################## Figure 2######################## 
 
 Files Manage用例图说明：
 
@@ -82,7 +82,7 @@ Files Manage用例图说明：
 
 
 
-###Figure 3 :
+######################## Figure 3######################## 
 
 Search and Review Files用例图说明：
 
@@ -119,7 +119,7 @@ Search and Review Files用例图说明：
 
 
 
-###Figure 4 :
+######################## Figure 4 ######################## 
 
 Download Files用例图说明：
 
