@@ -173,18 +173,25 @@ github:LiYuanXiang-github.github.io
 
 
 在该部分为两部分的分析：根据用例图，进行初步分析类之间的关系和多重度的分析
-①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
+①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，
+       但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
 
 ②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），
 而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，
+
 可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），
+
 教学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
 
 
 ③        找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
 
 	而且注册类由于受管理员（Administrator）的管理，
+	
 	存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
+	
+	
+	
 ④	 教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
 
 
