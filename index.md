@@ -108,18 +108,20 @@ github:LiYuanXiang-github.github.io
 1 参与者：①教师（Teacher）②管理员（Administrator）
 
 
-2 用例：① 教师登录（TeacherLogin）②管理员登陆（AdministrationLogin）
+2 用例：1）教师登录（TeacherLogin）2）管理员登陆（AdministrationLogin）
 
 
-		③注册（Register）          ④找回密码（Retrieeve PassWord）
+	 3）注册（Register）         4）找回密码（Retrieeve PassWord）
 		
-⑤上传教学视频（upLoadTeachVideo）⑥上传课件(upLoadCourseWare）
+5）上传教学视频（upLoadTeachVideo）  5)上传课件(upLoadCourseWare）
 
 
-⑦上传教学心得(upLoadTeachExperience）⑧检查文件（ckeckFile）
+6)上传教学心得(upLoadTeachExperience） 7)检查文件（ckeckFile）
 
 
-⑨注册管理（RegisterManage）       ⑩网页维护（maintainPage）
+8)注册管理（RegisterManage）       9)网页维护（maintainPage）
+
+
 3	用例图关系分析：
 
 
@@ -139,7 +141,11 @@ github:LiYuanXiang-github.github.io
 ## 二．	类图分析
 ## 说明：根据划分，
 实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
+
+
 控制类：上传（upLoadOrNot）,登录（Login）
+
+
 边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
 
 
@@ -158,7 +164,11 @@ github:LiYuanXiang-github.github.io
 
 ## 2.具体类图分析：
 ①	注册类（Register）中
+
+
 属性：
+
+
 用户ID（-userID:int）,登录密码（-PassWord: String），用户电话（-Tel: String），用户班级（-userClass: String）的属性，
 方法：
 在注册时，应该有一个公有的（public）提交的方法，用于提交上传注册信息，即在类图中使用（+submit()）方法;
@@ -166,29 +176,45 @@ github:LiYuanXiang-github.github.io
 
 
 ②	 找回密码类（Retrieve PassWord）中，  
+
+
 属性：
+
+
 所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，应当还有一个私有属性的新密码属性（-newPassWord: String）;
 
 方法：
+
+
 使用手机验证码，需要调用公有（public,类图中“+”表示共有）方法（+getVarificanCode()）;和一个获得新的密码的公有方法（即+getNewPassWord()）;
 
 
 
 ③	  登录类（Login）中，
+
+
 属性：
+
+
 应该需要两个私有的（类图中用“-”表示私有属性），即密码（-LoginID:int）和密码（-PassWord: String）属性；
 方法：
 方法中应该具有两个公有的方法获取登陆的密码和账号和一个公有的提交登录信息的方法，即获取登录账号（+getLoginID()）方法和获取密码（+getPassWord()）两个方法；以及提交的方法（+Commit()）;
 
 
 ④	登陆页面类（loginPage）中
+
+
 应该有三个按钮，     即取消登录（+Cance()）方法，提交按钮方法（+Commit()），显示信息（+Display()）三个方法；
 
 在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
 
 
 ⑤		在管理员类（Administrator）中，
+
+
 属性：
+
+
 管理员登录需要有私有的管理员ID（AdministratorID:int）和密码（PassWord: String）两个私有属性；
 
 方法：
@@ -196,25 +222,39 @@ github:LiYuanXiang-github.github.io
 
 
 ⑥	教师类（Teacher）和用户类（User）
+
+
 属性：
+
+
 	用户类（User）中，具有用户ID（-UserID :int），密码（-PassWord: String）,姓名（-Name: String），电话号（-Tel: String）属性；
 	由于教师类（Teacher）和用户类（User）中存在继承关系；教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），所教班级属性（-Teachclass: String）;
 
 方法：
 	用户类（User）中应该有获得相应属性的getter和setter方法，由于教师类（Teacher）继承于用户类（User）中，所以教师类的方法中，也是具有自己的相应属性的getter和setter属性；
-⑦	上传类（upLoadOrNot）
+⑦	上传类（upLoadOrNot）中，
+
+
 属性：
+
+
 上传文件类型（Type: String）
+
 方法：
+
 		管理员选择上传（+upLoad()）
 		管理员选择拒绝上传（+noUpLoad()）
 		
 		
-⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）
+⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）中
+
 
 属性：
+
+
 在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），时间（+upLoadDate:Date），名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
 
 方法：
+
 	在这几个类中，都应该公有的提交新的心得（+Commit()）方法；以及删除方法（+delCourseWare()/+delTeachExperience()/+delCourseVideo()），在上传课件（upLoadCourseWare）类中，还应该有修改的发方法（+updateCourseWare()）；
 上传心得类中包含审阅心得/检查心得（+checkTeacherExperience()）
