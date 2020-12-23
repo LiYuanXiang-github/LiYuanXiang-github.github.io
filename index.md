@@ -25,23 +25,33 @@ github:LiYuanXiang-github.github.io
 答：
 ①	类和用例包含的组成结构不同，所完成的工作不同。
 
+
 类是一组具有相同属性，操作，关系和语义的对象的抽象。主要包括名称部分，属性部分和操作部分。
 用例模型的基本组成包括：用例，角色（或者叫参与者）和系统。他们包含的成分不一样。用例是描述一系列的动作，这些动作是对一个特定角色的执行。
 他们包含的成分不一样，所完成的工作不一样。
 ②	类和用例的描述范围不一样，并且应用的软件设计时期不一样，用例图应该是使用在需求分析阶段，类图应该用于设计阶段。
 
+
 类可以说是用例图中用例的一部分具体描述，类侧重于描述功能的进一步的实现部分，而用例则侧重于需求分析阶段，应当是用于程序员之间的交流描述。
 用例用于描述系统的功能，从用户的角度来描述，系统应该包含哪些功能，帮助分析人员理解系统的行为，它是对系统功能的宏观，整体的描述。	
+
+
 ③	类和用例作用不同。
 
 用例用于在用例图的建模，即功能建模，帮助开发团队用可视化的方式理解系统的功能需求；
 类则用于信息建模，用来描述业务或者软件的组成部分；。
 
+
 ④	用例和类在各自的关系中不同：
 
-      用例中具有的关系为：包含关系（include），拓展关系(extend)，泛化关系，分组关系
-      类中具有的关系为：依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），
-      授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），泛化关系，关联关系，实现关系等。
+      用例中具有的关系为：
+      		包含关系（include），拓展关系(extend)，泛化关系，分组关系
+      类中具有的关系为：
+      		依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），
+     		 授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），
+		 泛化关系，关联关系，实现关系等。
+      
+      
 2）．试比较边界类与实体类的异同。
 
 
@@ -151,11 +161,10 @@ github:LiYuanXiang-github.github.io
 ## 二．	类图分析
 ## 说明：根据划分，
 
-	实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
-
+	实体类：课件(CourseWare），教学心得(TeachExperience），
+	       教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
 
 	控制类：上传（upLoadOrNot）,登录（Login）
-
 
 	边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
 
@@ -167,10 +176,15 @@ github:LiYuanXiang-github.github.io
 ①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
 
 ②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），
-而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），教		学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
+而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，
+可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），
+教学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
+
+
 ③        找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
 
-	而且注册类由于受管理员（Administrator）的管理，存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
+	而且注册类由于受管理员（Administrator）的管理，
+	存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
 ④	 教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
 
 
@@ -182,7 +196,8 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-	用户ID（-userID:int）,登录密码（-PassWord: String），用户电话（-Tel: String），用户班级（-userClass: String）的属性，
+	用户ID（-userID:int）,登录密码（-PassWord: String），
+	用户电话（-Tel: String），用户班级（-userClass: String）的属性.
 方法：
 
 
@@ -196,8 +211,8 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-	所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，
-	应当还有一个私有属性的新密码属性（-newPassWord: String）;
+	所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，
+	在进行验证成功以后，应当还有一个私有属性的新密码属性（-newPassWord: String）;
 
 方法：
 
@@ -223,8 +238,8 @@ github:LiYuanXiang-github.github.io
 
 
 	应该有三个按钮，即取消登录（+Cance()）方法，提交按钮方法（+Commit()），显示信息（+Display()）三个方法；
-
-	在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），
+	在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，
+	所以存在注册类（Register）,找回密码类（Retrieve PassWord），
 
 登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
 
@@ -247,9 +262,11 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-	用户类（User）中，具有用户ID（-UserID :int），密码（-PassWord: String）,姓名（-Name: String），电话号（-Tel: String）属性；
-	由于教师类（Teacher）和用户类（User）中存在继承关系；教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），
-	电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），所教班级属性（-Teachclass: String）;
+	用户类（User）中，具有用户ID（-UserID :int），密码（-PassWord: String）,姓名（-Name: String），
+	电话号（-Tel: String）属性；由于教师类（Teacher）和用户类（User）中存在继承关系；
+	教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），
+	电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），
+	所教班级属性（-Teachclass: String）;
 
 方法：
 	用户类（User）中应该有获得相应属性的getter和setter方法，由于教师类（Teacher）继承于用户类（User）中，所以教师类的方法中，也是具有自己的相应属性的getter和setter属性；
@@ -265,8 +282,8 @@ github:LiYuanXiang-github.github.io
 
 方法：
 
-管理员选择上传（+upLoad()）
-管理员选择拒绝上传（+noUpLoad()）
+ 	管理员选择上传（+upLoad()）
+	管理员选择拒绝上传（+noUpLoad()）
 		
 		
 ⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）中
@@ -275,8 +292,10 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-	在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），时间（+upLoadDate:Date），
-	名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
+	在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），
+	时间（+upLoadDate:Date），
+	名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），
+	课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
 
 方法：
 
