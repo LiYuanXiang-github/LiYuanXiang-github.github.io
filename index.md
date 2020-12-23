@@ -11,10 +11,11 @@
 
 github:LiYuanXiang-github.github.io
 
+#
 ##      ##第二次UML作业
 
 
-### ######################################################
+###############################################################################
 
 
 
@@ -38,37 +39,43 @@ github:LiYuanXiang-github.github.io
 
 ④	用例和类在各自的关系中不同：
 
-用例中具有的关系为：包含关系（include），拓展关系(extend)，泛化关系，分组关系
-类中具有的关系为：依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），泛化关系，关联关系，实现关系等。
+      用例中具有的关系为：包含关系（include），拓展关系(extend)，泛化关系，分组关系
+      类中具有的关系为：依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），
+      授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），泛化关系，关联关系，实现关系等。
 2）．试比较边界类与实体类的异同。
 
 
 答：
-    边界类位于系统与外界的交界处，窗体、报表、以及表示通讯协议的类、直接与外部设备交互的类、直接与外部系统交互的类等都是边界类。通过用例图可以确定需要的边界类，每个Actor/Use Case对至少要一个边界类，但并非每个Actor/Use Case对要唯一的边界类。实体类保存要放进持久存储体的信息。持久存储体就是数据库、文件等可以永久存储数据的介质。实体类可以通过事件流和交互图发现。通常每个实体类在数据库中有相应的表，实体类中的属性对应数据库表中的字段。
+    边界类位于系统与外界的交界处，窗体、报表、以及表示通讯协议的类、直接与外部设备交互的类、直接与外部系统交互的类等都是边界类。
+    通过用例图可以确定需要的边界类，每个Actor/Use Case对至少要一个边界类，但并非每个Actor/Use Case对要唯一的边界类。
+    实体类保存要放进持久存储体的信息。持久存储体就是数据库、文件等可以永久存储数据的介质。
+    实体类可以通过事件流和交互图发现。通常每个实体类在数据库中有相应的表，实体类中的属性对应数据库表中的字段。
     
     
 3）．试运用本节所学的静态建模技术找出用户管理模块中的所有的类。
 
 
 答：
-	用户类（User）、管理员类（Administrator）、登录类（Logon）、连接类（Conn）
-	用户管理界面类（userManageUI）;
+		用户类（User）、管理员类（Administrator）、登录类（Logon）、连接类（Conn）
+		用户管理界面类（userManageUI）;
 	
 	
 4）．请找出学生管理系统中学生注册用例的实体类，边界类，控制类。
 
 
 答：
-实体类：ReportCard类、Administrator类，student类
-边界类：Logon类，WebSite类
-控制类：Grades类, Logon类
+	实体类：ReportCard类、Administrator类，student类
+	边界类：Logon类，WebSite类
+	控制类：Grades类, Logon类
 
 5）．什么是依赖？它与关联有什么区别？
 
 
 答：
-	如果两个元素其中一个的定义发生改变则会引起另一个元素发生变化则称这两个元素之间存在依赖关系，对于类来说，依赖可能存在于下列几种情况中：一个类要发送消息给另一个类；一个类将另一个类作为其数据的一部分；一个类的操作中将另一个类作为其参数。如果一个类改变了接口，则任何发送给该类的消息可能不再有效了。
-	关联和依赖其实区别在于它们表达模型的时候描述的是两个不同的方面，依赖描述的是类发生改变引起其他类相应变化，它不仅可以由于类之间的关联引起，也可以由于类的参数变化（该参数也是类）以及类之间消息传递机制引起。只要是类发生了变化引起另一个类变化都可说是存在依赖。
+	如果两个元素其中一个的定义发生改变则会引起另一个元素发生变化则称这两个元素之间存在依赖关系，对于类来说，
+	依赖可能存在于下列几种情况中：一个类要发送消息给另一个类；一个类将另一个类作为其数据的一部分；一个类的操作中将另一个类作为其参数。如果一个类改变了接口，则任何发送给该类的消息可能不再有效了。
+	关联和依赖其实区别在于它们表达模型的时候描述的是两个不同的方面，依赖描述的是类发生改变引起其他类相应变化，
+	它不仅可以由于类之间的关联引起，也可以由于类的参数变化（该参数也是类）以及类之间消息传递机制引起。只要是类发生了变化引起另一个类变化都可说是存在依赖。
 关联则表达的是类之间的包含关系，类实体之间数量关系
 
 
@@ -76,7 +83,8 @@ github:LiYuanXiang-github.github.io
 
 
 答：
-	泛化是一种类型上的用于特殊和一般的关系； 类的继承属于泛化的一种，继承是面向对象的概念，泛化是UML的术语；C++中很多类继承一个父类，叫做泛化。比如：狮子、老虎、狗都继承动物这个父类，叫泛化；继承还有其他各种不同方式，所以说泛化是一种特殊的继承关系。
+	泛化是一种类型上的用于特殊和一般的关系； 类的继承属于泛化的一种，继承是面向对象的概念，泛化是UML的术语；
+	C++中很多类继承一个父类，叫做泛化。比如：狮子、老虎、狗都继承动物这个父类，叫泛化；继承还有其他各种不同方式，所以说泛化是一种特殊的继承关系。
 
 
 7）．试论述聚合和组合的异同。
@@ -108,24 +116,26 @@ github:LiYuanXiang-github.github.io
 1 参与者：①教师（Teacher）②管理员（Administrator）
 
 
-2 用例：1）教师登录（TeacherLogin）2）管理员登陆（AdministrationLogin）
+2 用例：  
 
+	1）教师登录（TeacherLogin）2）管理员登陆（AdministrationLogin）
 
-	 3）注册（Register）         4）找回密码（Retrieeve PassWord）
+	3）注册（Register）         4）找回密码（Retrieeve PassWord）
 		
-5）上传教学视频（upLoadTeachVideo）  5)上传课件(upLoadCourseWare）
+	5）上传教学视频（upLoadTeachVideo）  5)上传课件(upLoadCourseWare）
 
 
-6)上传教学心得(upLoadTeachExperience） 7)检查文件（ckeckFile）
+	6)上传教学心得(upLoadTeachExperience） 7)检查文件（ckeckFile）
 
 
-8)注册管理（RegisterManage）       9)网页维护（maintainPage）
+	8)注册管理（RegisterManage）       9)网页维护（maintainPage）
 
 
 3	用例图关系分析：
 
 
-①教师和管理员再登录时候都和对应的登录有关系，而且，管理员的登录和教  师应该所不同，所以构成教师登录（TeacherLogin）和管理员登录（AdministratorLogin），并且教师和管理员和对应登录具有相应的登陆联系。
+①教师和管理员再登录时候都和对应的登录有关系，而且，管理员的登录和教  师应该所不同，所以构成教师登录（TeacherLogin）和管理员登录（AdministratorLogin），
+并且教师和管理员和对应登录具有相应的登陆联系。
 
 
 ②注册（Register）和找回密码（Retrieeve PassWord）因该是属于教师登录（TeacherLogin）的拓展关系，并且，注册（Register）受到管理员的注册管理（RegisterManage）的管理，应该存在联系。
@@ -140,13 +150,14 @@ github:LiYuanXiang-github.github.io
 
 ## 二．	类图分析
 ## 说明：根据划分，
-实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
+
+	实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
 
 
-控制类：上传（upLoadOrNot）,登录（Login）
+	控制类：上传（upLoadOrNot）,登录（Login）
 
 
-边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
+	边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
 
 
 ## 1.初步分析：
@@ -155,10 +166,12 @@ github:LiYuanXiang-github.github.io
 在该部分为两部分的分析：根据用例图，进行初步分析类之间的关系和多重度的分析
 ①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
 
-②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），，而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
-③	 找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
-而且注册类由于受管理员（Administrator）的管理，存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
-④	  教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
+②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），
+而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），教		学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
+③        找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
+
+	而且注册类由于受管理员（Administrator）的管理，存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
+④	 教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
 
 
 
@@ -169,8 +182,10 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-用户ID（-userID:int）,登录密码（-PassWord: String），用户电话（-Tel: String），用户班级（-userClass: String）的属性，
+	用户ID（-userID:int）,登录密码（-PassWord: String），用户电话（-Tel: String），用户班级（-userClass: String）的属性，
 方法：
+
+
 在注册时，应该有一个公有的（public）提交的方法，用于提交上传注册信息，即在类图中使用（+submit()）方法;
 
 
@@ -181,7 +196,8 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，应当还有一个私有属性的新密码属性（-newPassWord: String）;
+	所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，
+	应当还有一个私有属性的新密码属性（-newPassWord: String）;
 
 方法：
 
@@ -196,17 +212,21 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-应该需要两个私有的（类图中用“-”表示私有属性），即密码（-LoginID:int）和密码（-PassWord: String）属性；
+	应该需要两个私有的（类图中用“-”表示私有属性），即密码（-LoginID:int）和密码（-PassWord: String）属性；
+
 方法：
-方法中应该具有两个公有的方法获取登陆的密码和账号和一个公有的提交登录信息的方法，即获取登录账号（+getLoginID()）方法和获取密码（+getPassWord()）两个方法；以及提交的方法（+Commit()）;
+方法中应该具有两个公有的方法获取登陆的密码和账号和一个公有的提交登录信息的方法，即获取登录账号（+getLoginID()）方法和获取密码（+getPassWord()）两个方法；
+以及提交的方法（+Commit()）;
 
 
 ④	登陆页面类（loginPage）中
 
 
-应该有三个按钮，     即取消登录（+Cance()）方法，提交按钮方法（+Commit()），显示信息（+Display()）三个方法；
+	应该有三个按钮，即取消登录（+Cance()）方法，提交按钮方法（+Commit()），显示信息（+Display()）三个方法；
 
-在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
+	在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），
+
+登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
 
 
 ⑤		在管理员类（Administrator）中，
@@ -215,7 +235,7 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-管理员登录需要有私有的管理员ID（AdministratorID:int）和密码（PassWord: String）两个私有属性；
+	管理员登录需要有私有的管理员ID（AdministratorID:int）和密码（PassWord: String）两个私有属性；
 
 方法：
 	管理员由于题目所描述,管理员有检查文件的公有方法（+checkFile()）,注册管理（+registerManae()）,维护网页的方法（+maintainPage()）的三个方法；
@@ -228,22 +248,25 @@ github:LiYuanXiang-github.github.io
 
 
 	用户类（User）中，具有用户ID（-UserID :int），密码（-PassWord: String）,姓名（-Name: String），电话号（-Tel: String）属性；
-	由于教师类（Teacher）和用户类（User）中存在继承关系；教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），所教班级属性（-Teachclass: String）;
+	由于教师类（Teacher）和用户类（User）中存在继承关系；教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），
+	电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），所教班级属性（-Teachclass: String）;
 
 方法：
 	用户类（User）中应该有获得相应属性的getter和setter方法，由于教师类（Teacher）继承于用户类（User）中，所以教师类的方法中，也是具有自己的相应属性的getter和setter属性；
+	
+	
 ⑦	上传类（upLoadOrNot）中，
 
 
 属性：
 
 
-上传文件类型（Type: String）
+	上传文件类型（Type: String）
 
 方法：
 
-		管理员选择上传（+upLoad()）
-		管理员选择拒绝上传（+noUpLoad()）
+管理员选择上传（+upLoad()）
+管理员选择拒绝上传（+noUpLoad()）
 		
 		
 ⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）中
@@ -252,9 +275,11 @@ github:LiYuanXiang-github.github.io
 属性：
 
 
-在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），时间（+upLoadDate:Date），名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
+	在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），时间（+upLoadDate:Date），
+	名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
 
 方法：
 
-	在这几个类中，都应该公有的提交新的心得（+Commit()）方法；以及删除方法（+delCourseWare()/+delTeachExperience()/+delCourseVideo()），在上传课件（upLoadCourseWare）类中，还应该有修改的发方法（+updateCourseWare()）；
+在这几个类中，都应该公有的提交新的心得（+Commit()）方法；以及删除方法（+delCourseWare()/+delTeachExperience()/+delCourseVideo()），
+在上传课件（upLoadCourseWare）类中，还应该有修改的发方法（+updateCourseWare()）；
 上传心得类中包含审阅心得/检查心得（+checkTeacherExperience()）
