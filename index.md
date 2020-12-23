@@ -11,7 +11,7 @@
 
 github:LiYuanXiang-github.github.io
 
-##      ##小组作业
+##      ##第二次UML作业
 
 
 ### ######################################################
@@ -34,33 +34,54 @@ github:LiYuanXiang-github.github.io
 ③	类和用例作用不同。
 
 用例用于在用例图的建模，即功能建模，帮助开发团队用可视化的方式理解系统的功能需求；
-类则用于信息建模，用来描述业务或者软件的组成部分；
+类则用于信息建模，用来描述业务或者软件的组成部分；。
+
 ④	用例和类在各自的关系中不同：
+
 用例中具有的关系为：包含关系（include），拓展关系(extend)，泛化关系，分组关系
 类中具有的关系为：依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），泛化关系，关联关系，实现关系等。
 2）．试比较边界类与实体类的异同。
+
+
 答：
-边界类位于系统与外界的交界处，窗体、报表、以及表示通讯协议的类、直接与外部设备交互的类、直接与外部系统交互的类等都是边界类。通过用例图可以确定需要的边界类，每个Actor/Use Case对至少要一个边界类，但并非每个Actor/Use Case对要唯一的边界类。实体类保存要放进持久存储体的信息。持久存储体就是数据库、文件等可以永久存储数据的介质。实体类可以通过事件流和交互图发现。通常每个实体类在数据库中有相应的表，实体类中的属性对应数据库表中的字段。	
+    边界类位于系统与外界的交界处，窗体、报表、以及表示通讯协议的类、直接与外部设备交互的类、直接与外部系统交互的类等都是边界类。通过用例图可以确定需要的边界类，每个Actor/Use Case对至少要一个边界类，但并非每个Actor/Use Case对要唯一的边界类。实体类保存要放进持久存储体的信息。持久存储体就是数据库、文件等可以永久存储数据的介质。实体类可以通过事件流和交互图发现。通常每个实体类在数据库中有相应的表，实体类中的属性对应数据库表中的字段。
+    
+    
 3）．试运用本节所学的静态建模技术找出用户管理模块中的所有的类。
+
+
 答：
 	用户类（User）、管理员类（Administrator）、登录类（Logon）、连接类（Conn）
 	用户管理界面类（userManageUI）;
+	
+	
 4）．请找出学生管理系统中学生注册用例的实体类，边界类，控制类。
+
+
 答：
 实体类：ReportCard类、Administrator类，student类
 边界类：Logon类，WebSite类
 控制类：Grades类, Logon类
 
 5）．什么是依赖？它与关联有什么区别？
+
+
 答：
 	如果两个元素其中一个的定义发生改变则会引起另一个元素发生变化则称这两个元素之间存在依赖关系，对于类来说，依赖可能存在于下列几种情况中：一个类要发送消息给另一个类；一个类将另一个类作为其数据的一部分；一个类的操作中将另一个类作为其参数。如果一个类改变了接口，则任何发送给该类的消息可能不再有效了。
 	关联和依赖其实区别在于它们表达模型的时候描述的是两个不同的方面，依赖描述的是类发生改变引起其他类相应变化，它不仅可以由于类之间的关联引起，也可以由于类的参数变化（该参数也是类）以及类之间消息传递机制引起。只要是类发生了变化引起另一个类变化都可说是存在依赖。
 关联则表达的是类之间的包含关系，类实体之间数量关系
+
+
 6)．什么是泛化？泛化是否就是类的继承，如果不是请说明理由。
+
+
 答：
 	泛化是一种类型上的用于特殊和一般的关系； 类的继承属于泛化的一种，继承是面向对象的概念，泛化是UML的术语；C++中很多类继承一个父类，叫做泛化。比如：狮子、老虎、狗都继承动物这个父类，叫泛化；继承还有其他各种不同方式，所以说泛化是一种特殊的继承关系。
 
+
 7）．试论述聚合和组合的异同。
+
+
 答：
 	聚合：表示两个对象之间是整体和部分的弱关系，部分的生命周期可以超越整体。如电脑和鼠标。
 组合：表示两个对象之间是整体和部分的强关系，部分的生命周期不能超越整体，或者说不能脱离整体而存在。组合关系的“部分”，是不能在整体之间进行共享的。
@@ -77,31 +98,59 @@ github:LiYuanXiang-github.github.io
 在用户使用的时候，需要使用找回密码的累，找回密码选项中，假设使用手机确认用户，所以在注册和找回密码的时候需要用户提供手机号码（Tel）作为一个属性；
 
 根据问题的分析和要求的任务，可以先使用用例图对整个系统进行初步的用例图分析，然后再用类图进一步进行完善。
+
+
 一．	用例图分析：根据上述的问题描述已经要求：
 1 参与者：①教师（Teacher）②管理员（Administrator）
+
+
 2 用例：① 教师登录（TeacherLogin）②管理员登陆（AdministrationLogin）
+
+
 		③注册（Register）          ④找回密码（Retrieeve PassWord）
+		
 ⑤上传教学视频（upLoadTeachVideo）⑥上传课件(upLoadCourseWare）
+
+
 ⑦上传教学心得(upLoadTeachExperience）⑧检查文件（ckeckFile）
+
+
 ⑨注册管理（RegisterManage）       ⑩网页维护（maintainPage）
 3	用例图关系分析：
+
+
 ①教师和管理员再登录时候都和对应的登录有关系，而且，管理员的登录和教  师应该所不同，所以构成教师登录（TeacherLogin）和管理员登录（AdministratorLogin），并且教师和管理员和对应登录具有相应的登陆联系。
+
+
 ②注册（Register）和找回密码（Retrieeve PassWord）因该是属于教师登录（TeacherLogin）的拓展关系，并且，注册（Register）受到管理员的注册管理（RegisterManage）的管理，应该存在联系。
+
+
 ③上传教学视频（upLoadTeachVideo），上传课件(upLoadCourseWare），
 上传教学心得(upLoadTeachExperience），是依赖于教师登陆后的情况，所以有依赖于教师登录（TeacherLogin），并且受到管理员的审核，所以和管理员的检查文件（checkFile）有关联；
+
+
 ④管理员再登陆后才能进行网页维护（maitainPage），检查文件（ckeckFile），注册管理（RegisterManage）建立联系
+
+
 二．	类图分析
 说明：根据划分，
 实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
 控制类：上传（upLoadOrNot）,登录（Login）
 边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
+
+
 1初步分析：
+
+
 在该部分为两部分的分析：根据用例图，进行初步分析类之间的关系和多重度的分析
 ①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
+
 ②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），，而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
 ③	 找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
 而且注册类由于受管理员（Administrator）的管理，存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
 ④	  教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
+
+
 
 2.具体类图分析：
 ①	注册类（Register）中
@@ -110,12 +159,16 @@ github:LiYuanXiang-github.github.io
 方法：
 在注册时，应该有一个公有的（public）提交的方法，用于提交上传注册信息，即在类图中使用（+submit()）方法;
 
+
+
 ②	 找回密码类（Retrieve PassWord）中，  
 属性：
 所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，应当还有一个私有属性的新密码属性（-newPassWord: String）;
 
 方法：
 使用手机验证码，需要调用公有（public,类图中“+”表示共有）方法（+getVarificanCode()）;和一个获得新的密码的公有方法（即+getNewPassWord()）;
+
+
 
 ③	  登录类（Login）中，
 属性：
@@ -129,12 +182,14 @@ github:LiYuanXiang-github.github.io
 
 在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
 
+
 ⑤		在管理员类（Administrator）中，
 属性：
 管理员登录需要有私有的管理员ID（AdministratorID:int）和密码（PassWord: String）两个私有属性；
 
 方法：
 	管理员由于题目所描述,管理员有检查文件的公有方法（+checkFile()）,注册管理（+registerManae()）,维护网页的方法（+maintainPage()）的三个方法；
+
 
 ⑥	教师类（Teacher）和用户类（User）
 属性：
@@ -149,6 +204,8 @@ github:LiYuanXiang-github.github.io
 方法：
 		管理员选择上传（+upLoad()）
 		管理员选择拒绝上传（+noUpLoad()）
+		
+		
 ⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）
 
 属性：
