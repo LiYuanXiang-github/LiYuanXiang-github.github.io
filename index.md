@@ -14,154 +14,146 @@ github:LiYuanXiang-github.github.io
 ##      ##小组作业
 
 
-### ########################### Figure 1############################
+### ######################################################
 
 
 
-GitHub System用例图说明：
+## 第一题（理论部分）回答以下问题：
+## 作答人：李元祥
+1）．试论述类与用例的区别。
+答：
+①	类和用例包含的组成结构不同，所完成的工作不同。
 
-作者：李元祥
+类是一组具有相同属性，操作，关系和语义的对象的抽象。主要包括名称部分，属性部分和操作部分。
+用例模型的基本组成包括：用例，角色（或者叫参与者）和系统。他们包含的成分不一样。用例是描述一系列的动作，这些动作是对一个特定角色的执行。
+他们包含的成分不一样，所完成的工作不一样。
+②	类和用例的描述范围不一样，并且应用的软件设计时期不一样，用例图应该是使用在需求分析阶段，类图应该用于设计阶段。
 
-用例图建模过程分析：
+类可以说是用例图中用例的一部分具体描述，类侧重于描述功能的进一步的实现部分，而用例则侧重于需求分析阶段，应当是用于程序员之间的交流描述。
+用例用于描述系统的功能，从用户的角度来描述，系统应该包含哪些功能，帮助分析人员理解系统的行为，它是对系统功能的宏观，整体的描述。	
+③	类和用例作用不同。
 
-##一：根据GitHub中的功能，我们对其进行如下描述，GitHub System中总共有以下的几大用例：
+用例用于在用例图的建模，即功能建模，帮助开发团队用可视化的方式理解系统的功能需求；
+类则用于信息建模，用来描述业务或者软件的组成部分；
+④	用例和类在各自的关系中不同：
+用例中具有的关系为：包含关系（include），拓展关系(extend)，泛化关系，分组关系
+类中具有的关系为：依赖关系（主要又分为：使用依赖，抽象依赖（又包含：跟踪依赖，精化依赖，派生依赖），授权依赖（又包含：访问依赖，导入依赖，友元依赖），绑定依赖），泛化关系，关联关系，实现关系等。
+2）．试比较边界类与实体类的异同。
+答：
+边界类位于系统与外界的交界处，窗体、报表、以及表示通讯协议的类、直接与外部设备交互的类、直接与外部系统交互的类等都是边界类。通过用例图可以确定需要的边界类，每个Actor/Use Case对至少要一个边界类，但并非每个Actor/Use Case对要唯一的边界类。实体类保存要放进持久存储体的信息。持久存储体就是数据库、文件等可以永久存储数据的介质。实体类可以通过事件流和交互图发现。通常每个实体类在数据库中有相应的表，实体类中的属性对应数据库表中的字段。	
+3）．试运用本节所学的静态建模技术找出用户管理模块中的所有的类。
+答：
+	用户类（User）、管理员类（Administrator）、登录类（Logon）、连接类（Conn）
+	用户管理界面类（userManageUI）;
+4）．请找出学生管理系统中学生注册用例的实体类，边界类，控制类。
+答：
+实体类：ReportCard类、Administrator类，student类
+边界类：Logon类，WebSite类
+控制类：Grades类, Logon类
 
-1.	查找文件/文档（Search Files）
-2.	文件查阅（Review Files）
-3.	文件管理(Manage Files)（对文件管理有三点，即对文件进行添加（Add Files）,删除(Delete File),修改(Modify)）
-4.	文件下载（Download Files）
-5.	系统管理(System Manage)；
-其中GitHub中主要有两大参与者：
-1.	用户（User）
-2.	管理员（Administrator）
+5）．什么是依赖？它与关联有什么区别？
+答：
+	如果两个元素其中一个的定义发生改变则会引起另一个元素发生变化则称这两个元素之间存在依赖关系，对于类来说，依赖可能存在于下列几种情况中：一个类要发送消息给另一个类；一个类将另一个类作为其数据的一部分；一个类的操作中将另一个类作为其参数。如果一个类改变了接口，则任何发送给该类的消息可能不再有效了。
+	关联和依赖其实区别在于它们表达模型的时候描述的是两个不同的方面，依赖描述的是类发生改变引起其他类相应变化，它不仅可以由于类之间的关联引起，也可以由于类的参数变化（该参数也是类）以及类之间消息传递机制引起。只要是类发生了变化引起另一个类变化都可说是存在依赖。
+关联则表达的是类之间的包含关系，类实体之间数量关系
+6)．什么是泛化？泛化是否就是类的继承，如果不是请说明理由。
+答：
+	泛化是一种类型上的用于特殊和一般的关系； 类的继承属于泛化的一种，继承是面向对象的概念，泛化是UML的术语；C++中很多类继承一个父类，叫做泛化。比如：狮子、老虎、狗都继承动物这个父类，叫泛化；继承还有其他各种不同方式，所以说泛化是一种特殊的继承关系。
 
-##二：模型分析：
-
-1.	Search Files, Review Files,Download Files,Manage Files属于管理员（Administrator）和用户（User）的共同的用例
-2.	System Manage应该是只有管理员才拥有的用例
-
-##三：模型建立： 
-
-User和Administrator共同指向Search Files, Review Files,Download Files,Manage Files，而Administrator单独指向System Manage。
-
-
-
-
-
-### ########################### Figure 2############################
-
-
-
-Files Manage用例图说明：
-
-作者：李元祥
-
-用例图建模过程分析：
-
-##一：根据上述的Files Manage中的功能分析，对其进行如下描述 Files Manage中总共有以下的几大用例：
-1.	添加文件（Add Files）
-2.	删除文件（Delete Files）
-3.	修改文件(Modify Files)
-4.	创建新文件(Create new Files)
-5.	提交文档(Commit Cocuments)
-6.	提交代码(Commit Code)
-7.	提交删除(Commit Delete)
-8.	提交修改(Commit Modify)
-9.	查找文件(Search Files)
-其中Files Manage中主要有两大参与者：
-1．	用户（User）
-2．	管理员（Administrator）
-
-##二：模型分析
-
-1.	管理员（Administrator）和用户（User）都共同有添加文件（Add Files），删除文件（Delete Files），
-修改文件(Modify Files)的用例；
-2	.对于添加文件（Add Files），应该是被创建新文件（Create new Files）以后才能添加，而后应该是对文件进行文档提交（Commit Cocuments）和代码提交（Commit Code）；
-3.	对于删除文件（Delete Files），应该依赖于查找文件（Search Files）以后,才能进行修改。而后进删除提交（Commit Delete），固然有删除提交（Commit Delete）被包含于删除文件（Delete Files）；
-4.	对于修改文件（Modify Files），应该依赖于查找文件（Search Files）以后,才能进行修改。而后进删除提交（Commit Midify），固然有删除提交（Commit Modify）被包含于删除文件（Modify Files）；
-
-##三．模型建立： 
-
-1.	用户（User）和管理员（Administrator）都共同指向与添加文件（Add Files），删除文件（Delete Files），修改文件(Modify Files)。
-2.	添加文件（Add Files）指向被依赖于创建新文件(Create new  Files)；删除文件（Delete Files），
-修改文件(Modify Files)指向与添加文件（Add Files），并且是extend关系；
-3.	删除文件（Delete Files）和修改文件（Modify Films）中都有共同指向与查找文件（Search Files）的依赖关系，且分别指向对应的删除提交（Commit Delete）或者（Commit Modify）；
+7）．试论述聚合和组合的异同。
+答：
+	聚合：表示两个对象之间是整体和部分的弱关系，部分的生命周期可以超越整体。如电脑和鼠标。
+组合：表示两个对象之间是整体和部分的强关系，部分的生命周期不能超越整体，或者说不能脱离整体而存在。组合关系的“部分”，是不能在整体之间进行共享的。
 
 
+## 第3题（网络远程课程）
+/*作答人：李元祥
+//gitHub博客：：liyuanxiang-github.github.io
+3、网络的普及带给了人们更多的学习途径，随之而来的管理远程网络教学的“远程网络教学系统”诞生了。“远程网络教学系统”的功能需求如下：学生登录网站后，可以浏览课件、查找课件、下载课件、观看教学视频。教师登录网站后，可以上传课件、上传教学视频、发布教学心得、查看教学心得、修改教学心得。系统管理员负责对网站页面的维护、审核不合法课件和不合法教学信息、批准用户注册。
+问题：老师需要登录“远程网络教学系统”后才能正常使用该系统的所有功能。如果忘记密码，可与通过“找回密码”功能恢复密码。请使用staruml 画出教师参与者的类图。
+## 答：
+分析阶段：
+说明：由于题目中要求分析的是教师参与者的类图，固选取符合教师参与者的参与者，用例进行分析，对于学生参与者类，只进行简略的描述或者不描述；
+在用户使用的时候，需要使用找回密码的累，找回密码选项中，假设使用手机确认用户，所以在注册和找回密码的时候需要用户提供手机号码（Tel）作为一个属性；
+
+根据问题的分析和要求的任务，可以先使用用例图对整个系统进行初步的用例图分析，然后再用类图进一步进行完善。
+一．	用例图分析：根据上述的问题描述已经要求：
+1 参与者：①教师（Teacher）②管理员（Administrator）
+2 用例：① 教师登录（TeacherLogin）②管理员登陆（AdministrationLogin）
+		③注册（Register）          ④找回密码（Retrieeve PassWord）
+⑤上传教学视频（upLoadTeachVideo）⑥上传课件(upLoadCourseWare）
+⑦上传教学心得(upLoadTeachExperience）⑧检查文件（ckeckFile）
+⑨注册管理（RegisterManage）       ⑩网页维护（maintainPage）
+3	用例图关系分析：
+①教师和管理员再登录时候都和对应的登录有关系，而且，管理员的登录和教  师应该所不同，所以构成教师登录（TeacherLogin）和管理员登录（AdministratorLogin），并且教师和管理员和对应登录具有相应的登陆联系。
+②注册（Register）和找回密码（Retrieeve PassWord）因该是属于教师登录（TeacherLogin）的拓展关系，并且，注册（Register）受到管理员的注册管理（RegisterManage）的管理，应该存在联系。
+③上传教学视频（upLoadTeachVideo），上传课件(upLoadCourseWare），
+上传教学心得(upLoadTeachExperience），是依赖于教师登陆后的情况，所以有依赖于教师登录（TeacherLogin），并且受到管理员的审核，所以和管理员的检查文件（checkFile）有关联；
+④管理员再登陆后才能进行网页维护（maitainPage），检查文件（ckeckFile），注册管理（RegisterManage）建立联系
+二．	类图分析
+说明：根据划分，
+实体类：课件(CourseWare），教学心得(TeachExperience），教学视频（TeachVideo），管理员（Administrator），教师（Teacher）
+控制类：上传（upLoadOrNot）,登录（Login）
+边界类：登陆页面(loginPage)，注册（Register），找回密码（Retrieve PassWord）
+1初步分析：
+在该部分为两部分的分析：根据用例图，进行初步分析类之间的关系和多重度的分析
+①	教师（Teacher）和学生（Students）类应该是拥有一个公共的父类，即用户（User）类，是教师类的父类。有教师类继承于User类，但是管理员Adminstrtor不应属于用户，所以单独列出，作为一个单独的类；
+②	根据上述用例图分析，以及题目的描述，知道有：只有教师类才能上传教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），，而且，一门课程，可能有多名老师授课，至少一名老师上课，在上传课件，教学视频和教学心得的时候，可能上传0或者多个课件，教学视频和教学心得。固然，教师和教学视频（TeachVideo），课件(CourseWare），教学心得(TeachExperience），之间存在教师1..*和课件，教学心得，教学视频的0..*的多重度m描述；
+③	 找回密码（Retrieeve PassWord）类，注册类（Register），都应该存在依赖于登录类（Login）,
+而且注册类由于受管理员（Administrator）的管理，存在管理员（Administrator）1..*和注册（Register）1..*的多重度联系；
+④	  教师（Teacher）是用户（User）类的子类；用户的操作和管理员（Administrator）的操作都依赖于登录类（Login）；
+
+2.具体类图分析：
+①	注册类（Register）中
+属性：
+用户ID（-userID:int）,登录密码（-PassWord: String），用户电话（-Tel: String），用户班级（-userClass: String）的属性，
+方法：
+在注册时，应该有一个公有的（public）提交的方法，用于提交上传注册信息，即在类图中使用（+submit()）方法;
+
+②	 找回密码类（Retrieve PassWord）中，  
+属性：
+所以有属性私有属性电话号码（-Tel: String）,以及用户的ID（教师类为教师ID）（-TeacherID:int）类，在进行验证成功以后，应当还有一个私有属性的新密码属性（-newPassWord: String）;
+
+方法：
+使用手机验证码，需要调用公有（public,类图中“+”表示共有）方法（+getVarificanCode()）;和一个获得新的密码的公有方法（即+getNewPassWord()）;
+
+③	  登录类（Login）中，
+属性：
+应该需要两个私有的（类图中用“-”表示私有属性），即密码（-LoginID:int）和密码（-PassWord: String）属性；
+方法：
+方法中应该具有两个公有的方法获取登陆的密码和账号和一个公有的提交登录信息的方法，即获取登录账号（+getLoginID()）方法和获取密码（+getPassWord()）两个方法；以及提交的方法（+Commit()）;
 
 
+④	登陆页面类（loginPage）中
+应该有三个按钮，     即取消登录（+Cance()）方法，提交按钮方法（+Commit()），显示信息（+Display()）三个方法；
 
+在登陆页面中，应该有唯一的注册类（Register），找回密码类（Retrieve PassWord）和登陆类（Login）组合成，所以存在注册类（Register）,找回密码类（Retrieve PassWord），登陆类（Login）和登陆页面类（loginPage）有组合的1对1的组合关系；
 
-### ########################### Figure 3############################
+⑤		在管理员类（Administrator）中，
+属性：
+管理员登录需要有私有的管理员ID（AdministratorID:int）和密码（PassWord: String）两个私有属性；
 
+方法：
+	管理员由于题目所描述,管理员有检查文件的公有方法（+checkFile()）,注册管理（+registerManae()）,维护网页的方法（+maintainPage()）的三个方法；
 
-Search and Review Files用例图说明：
+⑥	教师类（Teacher）和用户类（User）
+属性：
+	用户类（User）中，具有用户ID（-UserID :int），密码（-PassWord: String）,姓名（-Name: String），电话号（-Tel: String）属性；
+	由于教师类（Teacher）和用户类（User）中存在继承关系；教师类的属性有具有教师ID（-TeacherID :int），密码（-PassWord: String）,姓名（-TeacherName），电话号（-Tel）以及教室了特有的所教科目（-TeachSubject: String），所教班级属性（-Teachclass: String）;
 
-作者：李元祥，王庆瑞
+方法：
+	用户类（User）中应该有获得相应属性的getter和setter方法，由于教师类（Teacher）继承于用户类（User）中，所以教师类的方法中，也是具有自己的相应属性的getter和setter属性；
+⑦	上传类（upLoadOrNot）
+属性：
+上传文件类型（Type: String）
+方法：
+		管理员选择上传（+upLoad()）
+		管理员选择拒绝上传（+noUpLoad()）
+⑧	课件(CourseWare)、教学视频类(TeachVideo)、教学心得(TeachExperience)类和科目（subject()）
 
-用例图建模过程分析：
+属性：
+在应该包含对应的公有的心得/课件/教学视频的唯一（+TeachExperienceID:int / +courseWareID:int/ +teachVideoID:int），时间（+upLoadDate:Date），名字（+TeachExperienceName: String/ +courseWareName: String/ +teachVideoName: String），课程名教师ID（+TeacherID:int），以及科目（+subject: String）属性;
 
-##一：根据上述的Search and Review Files中的功能分析，对其进行如下描述 Files Manage中总共有以下的几大用例：
-
-1.	查找文件（Search Files）
-2.	阅读文件（Review Files）
-3.	模糊查找（Fuzzy Saerch）
-4.	精确查找（Exact Search）
-5.	下载后查看（Download after Review）
-6.	在线查看（Online Review）
-其中Search and Review Files中主要有两大参与者：
-1.	用户（User）
-2.	管理员（Administrator）
-
-##二：模型分析
-
-1.	管理员（Administrator）和用户（User）都共同有查找文件（Search Files）和阅读文件（Review Files）
-2.	对于查找文件（Search Files），存在精确查找（Exact Search）找和模糊查询（Fuzzy Saerch）的泛化关系；
-3.	对于阅读文件（Review Files），存在下载后查看（Download after Review）和在线查看（Online Review）的泛化关系
-4.	由于阅读前应该是先查找文件（Search Files）到然后再阅读文件（Review Files），固然存在阅读文件（Review Files）依赖查找文件（Search Files）；
-
-##三．	模型建立： 
-
-1.	用户（User）和管理员（Administrator）都共同指向查找文件（Search Files）和阅读文件（Review Files）
-2.	阅读文件（Review Files）依赖指向于查找文件（Search Files）；
-3.	精确查找（Exact Search）和模糊查询（Fuzzy Saerch）指向泛化于查找文件（Search Files）；
-4.	下载后查看（Download after Review）和在线查看（Online Review）指向泛化于阅读文件（Review Files）；
-
-
-
-
-### ########################### Figure 4############################
-
-
-
-Download Files用例图说明：
-
-作者：李杰,葛洲宇
-
-用例图建模过程分析：
-
-##一：根据上述的Download Files中的功能分析，对其进行如下描述 Files Manage中总共有以下的几大用例：
-
-1.	查找文件（Search Files）
-2.	下载文件（Download Files）
-3.	克隆或下载文件（Clone or Download）
-4.	源文件下载（Raw）
-5.	桌面打开（Open  in  Desktop）
-6.	Zip下载（DwonloadZip）
-其中Download Files中主要有两大参与者：
-1	 用户（User）
-2	管理员（Administrator） 
-
-##二：模型分析
-
-1.	管理员（Administrator）和用户（User）都共同有下载文件（Download Files）
-2.	下载文件（Download Files）的下载之前应该有查找文件（Search Files）固然有依赖关系;下载文件（Download Files）分为两种，分别是克隆或下载文件（Clone or Download）和源文件下载（Raw），存在的是泛化关系。
-3.   克隆或下载文件（Clone or Download）中又分为桌面打开（Open  in  Desktop）以及Zip下载（DwonloadZip）两种方式；
-
-##三．模型建立： 
-
-1.	用户（User）和管理员（Administrator）都共同指向下载文件（Download Files）
-2.	下载文件（Download Files）指向查找文件（Search Files），为依赖关系;
-3.	克隆或下载文件（Clone or Download）和源文件下载（Raw）共同指向下载文件（Download Files）并且是泛化关系；
-4.	桌面打开（Open  in  Desktop）以及Zip下载（DwonloadZip）指向克隆或下载文件（Clone or Download），并且是extend关系；
-
+方法：
+	在这几个类中，都应该公有的提交新的心得（+Commit()）方法；以及删除方法（+delCourseWare()/+delTeachExperience()/+delCourseVideo()），在上传课件（upLoadCourseWare）类中，还应该有修改的发方法（+updateCourseWare()）；
+上传心得类中包含审阅心得/检查心得（+checkTeacherExperience()）
