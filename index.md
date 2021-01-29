@@ -24,8 +24,14 @@ github:LiYuanXiang-github.github.io
 作答情况： 
 名字	     所作答题目	 				  gitHub主页		学号
 李元祥	第一题全部（文字说明&UML模型图）	https://liyuanxiang-github.github.io/	  20182123070
+
+
 葛洲宇	第二题文字说明                       tingwenmoxin.github.io			20182123033
+
+
 王庆瑞	第二题UML模型图		       wqr20182123018.github.io			 20182123018
+
+
 李杰	 第三题全部（文字说明&UML模型图）	 diechild.github.io			   20182123031
 
 ## 第一题
@@ -37,8 +43,8 @@ Repositories(仓库)项目代码托管功能
 
 //作答人：李元祥
 //github地址: https://liyuanxiang-github.github.io/
-活动图建模：
-##  一：建模思路：
+
+##  一：活动图建模思路：
 ·		根据对github的学习和了解：
 
 
@@ -79,7 +85,7 @@ Repositories(仓库)项目代码托管功能
 5最后还需要在github的客户端进行提交（CommitRepositorise）;
 
 
-##  二．建模过程：
+##  二．活动图建模过程：
 1.由开始步骤，所有的功能都建立在注册和登录上，固然，
 初始节点指向注册和登录（LoginAndRegister）这个活动；
 2.登陆以后需要判断github是否已经建立仓库，既有判断条件是否有，没有则create一个仓库（CreateRepositories），
